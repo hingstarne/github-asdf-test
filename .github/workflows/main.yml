@@ -10,7 +10,7 @@ env:
 
 jobs:
   pipeline:
-    runs-on: ['test']
+    runs-on: ['self-hosted','linux','x64','kaia','otc','eu','test']
     services:
       redis:
         image: redis:5-alpine
@@ -31,9 +31,4 @@ jobs:
           --health-retries 5
     steps:
       - name: Checkout code
-        uses: "elgohr/asdf-build-action@master"
-        env: 
-          ENVIRONMENT: "golang"
-          VERSION: "1.12"
-        args: "go test ./..."
-
+        uses: actions/checkout@v2
