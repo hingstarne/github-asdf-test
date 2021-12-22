@@ -1,0 +1,13 @@
+workflow "Run Go Tests" {
+  resolves = ["Test"]
+  on = "push"
+}
+
+action "Test" {
+  uses = "elgohr/asdf-build-action@master"
+  env = {
+    ENVIRONMENT = "golang"
+    VERSION     = "1.12"
+  }
+  args = "go test ./..."
+}
