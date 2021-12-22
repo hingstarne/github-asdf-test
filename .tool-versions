@@ -1,2 +1,3 @@
 terraform 1.1.1
 helm 3.7.2
+awscli latest
